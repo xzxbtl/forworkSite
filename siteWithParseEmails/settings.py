@@ -152,13 +152,13 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 # Гит
-SOCIAL_AUTH_GITHUB_KEY = 'c8002771aab92d7f96bd'
-SOCIAL_AUTH_GITHUB_SECRET = '3085a6deef269ad0b2531669a7a2b58eef617286'
+SOCIAL_AUTH_GITHUB_KEY = 'your_key'
+SOCIAL_AUTH_GITHUB_SECRET = 'your_secret_key'
 LOGIN_URL = 'users:login'
 LOGIN_REDIRECT_URL = 'emailapp:home'
 LOGOUT_URL = 'logout'
 LOGOUT_REDIRECT_URL = 'users:login'
 
 #Гугл
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '798567976420-h9263slumu1nppq8vrolk8ch0fib8vav.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'your_key'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'your_secret_key'
