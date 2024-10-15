@@ -1,0 +1,351 @@
+* {
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: #161B1D;
+    font-family: "Inconsolata", monospace;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+a,u {
+    text-decoration: none;
+}
+
+/* header */
+
+.header-block {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1% 7%;
+    position: sticky;
+    user-select: none;
+}
+
+.header-logo {
+    margin-right: -20%;
+}
+
+.header-buttons a{
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    transition: color .8s ease;
+}
+
+.header-buttons a:hover {
+    color: red;
+}
+
+#logo-welcome {
+    width: 8%;
+    height: auto;
+}
+
+
+.header-buttons {
+    display: flex;
+    gap: 30pt;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #262a2c; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 10px;
+    border-radius: 16px;
+    margin-left: -20%;
+    margin-top: -8%;
+    width: 248px;
+    row-gap: 16px;
+}
+
+.dropdown-content a {
+    color: #ffffff;
+    padding: 3px 5px;
+    text-decoration: none;
+    display: block;
+    text-align: start;
+    font-size: 11px;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.theme-switcher-button {
+    background-color: #1e2224;
+    border-radius: 10px;
+    margin-top: 1.5%;
+    width: 36px;
+    height: 36px;
+    border: none;
+    cursor: pointer; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+}
+
+.theme-switcher-button:hover{
+    filter: brightness(150%);
+}
+
+.theme-switcher-button img {
+    width: 20px;
+    height: 20px;
+}
+
+.icons-header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-left: 6%;
+}
+
+/* header Messages Block */
+
+.mailsBlock {
+    position: absolute;
+    background-color: #262a2c;
+    display: grid;
+    width: 1200px;
+    height: 800px;
+    top: 15%;
+    left: 19%;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.blockMessages {
+    padding: 20px;
+    color: #fff;
+}
+
+.headBlock {
+    user-select: none;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #3a3f43;
+    border-radius: 8px;
+}
+
+.selectMail {
+    margin-right: 10px;
+}
+
+.progress-bar {
+    flex-grow: 0;
+    height: 35px; 
+    background-color: #ccc; 
+    border-radius: 10px;
+    position: relative;
+    width: 400px;
+    margin-left: 10px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #88929c;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    color: #fff;
+    font-weight: bold; 
+}
+
+#mailSelect {
+    border-radius: 10px;
+    font-size: 14px;
+    padding: .8rem 3.5rem;
+}
+
+select {
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    width: auto;
+    height: auto; 
+    padding: .5rem 2.5rem;
+    background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+        linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+}
+
+option {
+    color: inherit;
+    background-color: var(--option-bg);
+}
+
+:root {
+    --arrow-bg: rgba(255, 255, 255, 0.3);
+    --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+    --option-bg: white;
+    --select-bg: rgba(255, 255, 255, 0.2); 
+}
+
+.addMails {
+    position: relative;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.addEmailButton {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #88929c;
+    color: white;
+    font-size: 16px; 
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+    vertical-align: middle;
+    margin-left: 350px;
+    margin-top: -20px;
+}
+.addEmailButton:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.addEmailButton:active {
+    transform: translateY(0);
+}
+
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    margin-top: 20px;
+    margin: 20px 0;
+}
+
+/* messages Container */
+
+.mainBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+.messages {
+    position: relative;
+    background-color: #3b4044;
+    width: auto;
+    max-width: 1150px;
+    max-height: 180px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    color: #fff;
+    word-wrap: break-word;
+    overflow-y: auto; 
+}
+
+.messages a {
+    color: white;
+    text-decoration: none;
+}
+
+.message-footer {
+    position: absolute;
+    bottom: -15px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.nameMessage {
+    margin-left: 30%;
+}
+
+.dateSendMessage {
+    margin-right: 10px;
+}
+
+.descriptionMessage {
+    width: 900px;
+    margin-left: 20px;
+    word-wrap: break-word;
+}
+
+/* pagination */
+
+.pagination {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-left: 33%;
+}
+
+
+.pagination-button {
+    background-color: #88929c;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+.pagination-button.active {
+    background-color: #6f8df1;
+}
+
+.pagination-button.disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+
+/* scrollbar */
+.messages::-webkit-scrollbar {
+    width: 10px;
+}
+
+.messages::-webkit-scrollbar-track {
+    background-color: #f1f1f1; 
+    border-radius: 10px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background-color: #88929c;
+    border-radius: 10px;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+

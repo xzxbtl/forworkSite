@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static  %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Inconsolata:wght@200..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'emailapp/css/main.css' %}">
+    <title>{{ title }}</title>
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <div class="header-block">
+            <div class="header-logo">
+                <a href="">
+                    <img src="{% static 'emailapp/assest/images/logo.png' %}" id="logo-welcome">
+                </a>
+            </div>
+            <div class="header-buttons">
+                <a href="#">
+                    <h2 id="news">Новости</h2>
+                </a>
+                <div class="dropdown">
+                    <a href="#">
+                        <h2 id="read">Читать</h2>
+                    </a>
+                    <!-- header из другого недоделанного проекта
+                        <ul class="dropdown-content">
+                            <a href="#"><h2 id="main">Главная</h2></a>
+                            <a href="#"><h2 id="stats">Статьи</h2></a>
+                            <a href="#"><h2 id="obzors">Обзоры</h2></a>
+                            <a href="#"><h2 id="obzors">Превью</h2></a>
+                            <a href="#"><h2 id="interviews">Интерью</h2></a>
+                            <a href="#"><h2 id="podborka">Подборки</h2></a>
+                        </ul>
+                    -->
+                </div>
+                <div class="dropdown">
+                    <a href="#">
+                        <h2 id="watch">Смотреть</h2>
+                    </a>
+                    <!-- header из другого недоделанного проекта
+                        <ul class="dropdown-content">
+                            <a href="#"><h2 id="main">Главная</h2></a>
+                            <a href="#"><h2 id="videos">Видеообзоры</h2></a>
+                            <a href="#"><h2 id="histories">Истории серий</h2></a>
+                            <a href="#"><h2 id="avtorskie">Авторские видео</h2></a>
+                            <a href="#"><h2 id="trailers">Трейлеры</h2></a>
+                            <a href="#"><h2 id="allvideos">Все видео</h2></a>
+                        </ul>
+                    -->
+                </div>
+                <div class="dropdown">
+                    <a href="#">
+                        <h2 id="blog">Блоги</h2>
+                    </a>
+                    <!-- header из другого недоделанного проекта
+                        <ul class="dropdown-content">
+                            <a href="#"><h2 id="all">Все</h2></a>
+                            <a href="#"><h2 id="best-week-blog">Лучшее за неделю</h2></a>
+                            <a href="#"><h2 id="blogs+5">Блоги +5</h2></a>
+                            <a href="#"><h2 id="blogs+10">Блоги +10</h2></a>
+                        </ul>
+                    -->
+                </div>
+                <div class="dropdown">
+                    <a href="#">
+                        <h2 id="games">Игры</h2>
+                    </a>
+                    <!-- header из другого недоделанного проекта
+                        <ul class="dropdown-content">
+                            <a href="#"><h2 id="best-games">Лучшие игры</h2></a>
+                            <a href="#"><h2 id="Calendar">Календарь</h2></a>
+                            <a href="#"><h2 id="Catalog-games">Каталог</h2></a>
+                            <a href="#"><h2 id="otzovi-games">Отзовы игр</h2></a>
+                            <a href="#"><h2 id="podborka-games">Подобрка игр</h2></a>
+                        </ul>
+                    -->
+                </div>
+                <a href="#">
+                    <h2 id="help">Помощь</h2>
+                </a>
+                <div class="icons-header">
+                    <button class="theme-switcher-button">
+                        <img src="{% static 'emailapp/assest/images/white/search-white.svg' %}" alt="Иконка поиска" id="searchButton">
+                    </button>
+                    <button class="theme-switcher-button">
+                        <img src="{% static 'emailapp/assest/images/black/moon-new.svg' %}" alt="Иконка луны" id="themeButton">
+                    </button>
+                    <button class="theme-switcher-button">
+                        <img src="{% static 'emailapp/assest/images/message.svg' %}" alt="Иконка сообщения" id="messageButton">
+                    </button>
+                    <a class="authorization" href="{% if user.is_authenticated %}{% url 'users:logout' %}{% else %}{% url 'users:login' %}{% endif %}">
+                        {% if user.is_authenticated %}
+                                <button class="theme-switcher-button" style="border-radius: 36px;" id="avatarButton">
+                                    <img src="{% static 'emailapp/assest/images/unauthorization.svg' %}" alt="Иконка аватара">
+                                </button>
+                        {% else %}
+                            <button class="theme-switcher-button" style="border-radius: 36px;" id="avatarButton">
+                                <img src="{% static 'emailapp/assest/images/avatar.svg' %}" alt="Иконка аватара">
+                            </button>
+                        {% endif %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% block content %}
+    {% endblock %}
