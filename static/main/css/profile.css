@@ -3,6 +3,7 @@ body {
 }
 
 .block-profile{
+    position: absolute;
     background-color: rgba(242, 242, 242, 0.1);
     border-radius: 10px;
     padding: 20px;
@@ -10,8 +11,8 @@ body {
     height: 700px;
     justify-content: space-around;
     box-shadow: 0 0 5px 2px #437cf8, 0 0 6px 3px #244cfd, 0 0 12px 4px #437cf8, 0 0 20px 6px #244cfd;
-    margin-top: 6%;
-    margin-left: 26%;
+    margin-top: 8%;
+    right: 500px;
     transition: 1s;
 }
 
@@ -34,7 +35,7 @@ body {
 
 .line-profile {
     border: 1px solid #fff;
-    width: 835px;
+    width: 820x;
     margin-left: -60%;
 }
 

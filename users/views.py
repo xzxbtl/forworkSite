@@ -46,7 +46,8 @@ def registration(request):
             session_key = request.session.session_key
 
             user = form.instance
-            auth.login(request, user)
+            backend = 'django.contrib.auth.backends.ModelBackend'
+            auth.login(request, user, backend=backend)
 
             messages.success(request, f"{user.username}, Вы успешно зарегистрированы и вошли в аккаунт")
             return HttpResponseRedirect(reverse('emailapp:home'))

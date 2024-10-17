@@ -17,7 +17,7 @@
     <header>
         <div class="header-block">
             <div class="header-logo">
-                <a href="">
+                <a href="{% url 'emailapp:home' %}">
                     <img src="{% static 'emailapp/assest/images/logo.png' %}" id="logo-welcome">
                 </a>
             </div>
@@ -95,7 +95,7 @@
                     <button class="theme-switcher-button">
                         <img src="{% static 'emailapp/assest/images/message.svg' %}" alt="Иконка сообщения" id="messageButton">
                     </button>
-                    <a class="authorization" href="{% if user.is_authenticated %}{% url 'users:logout' %}{% else %}{% url 'users:login' %}{% endif %}">
+                    <a class="authorization" href="{% if user.is_authenticated %}{% url 'users:profile' %}{% else %}{% url 'users:login' %}{% endif %}">
                         {% if user.is_authenticated %}
                                 <button class="theme-switcher-button" style="border-radius: 36px;" id="avatarButton">
                                     <img src="{% static 'emailapp/assest/images/unauthorization.svg' %}" alt="Иконка аватара">

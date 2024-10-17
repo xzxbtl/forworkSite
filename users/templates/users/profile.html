@@ -65,6 +65,7 @@
                         </div>
                     </div>
                     <button type="submit" class="button-link-log">Save</button>
+                    <button type="submit" class="button-link-log"><a href="{% if user.is_authenticated %}{% url 'users:logout' %}{% endif %}" style="text-decoration: none; color: #fff;">Exit</a></button>
                 </form>
             {% endif %}
         </div>

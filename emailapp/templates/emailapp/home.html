@@ -11,17 +11,15 @@
                 <div class="headBlock">
                     <div class="selectMail">
                         <label for="mailSelect"></label>
-                        <select id="mailSelect">
-                            <option value="1">xzxbtl@mail.ru</option>
-                            <option value="2">idkgerws@gmail.com</option>
-                            <option value="3">testuser@yandex.ru</option>
+                        <select id="mailSelect" style="width: 350px;">
+                            {{ email_options|safe }}
                         </select>
                     </div>
                     <div class="progress-bar">
                         <div class="progress" style="width: 50%;">Загрузка писем...</div>
                     </div>
                     <div class="addMails">
-                        <a href="#" class="addEmailButton">Добавить</a>
+                        <a href="{% if user.is_authenticated %}{% url 'emailapp:mailadd' %}{% else %}{% url 'users:login' %}{% endif %}" class="addEmailButton">Добавить</a>
                     </div>
                 </div>
                 <div class="line"></div>
